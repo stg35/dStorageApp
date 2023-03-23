@@ -1,9 +1,10 @@
+/* eslint-disable no-useless-concat */
 import { ChainInfo } from "@keplr-wallet/types"
 import _ from "../../../environment"
 
 export const dstorageChainId = "dstorage"
 
-export const getCheckersChainInfo = (): ChainInfo => ({
+export const getDstorageChainInfo = (): ChainInfo => ({
     chainId: dstorageChainId,
     chainName: dstorageChainId,
     rpc: process.env.RPC_URL,

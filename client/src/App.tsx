@@ -1,10 +1,16 @@
 import React from 'react';
 import { BasicForm } from './components/BasicForm';
+import { FileList } from './components/FileList';
 
-function App() {
+export interface AppProps {
+  rpcUrl: string
+}
+
+function App({ rpcUrl }: AppProps): JSX.Element {
   return (
     <div>
-      <BasicForm />
+      <BasicForm rpcUrl={rpcUrl}/>
+      <FileList rpcUrl={rpcUrl}/>
     </div>
   );
 }

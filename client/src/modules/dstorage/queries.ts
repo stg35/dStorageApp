@@ -11,7 +11,7 @@ import { SystemInfo } from "../../types/generated/dstorage/system_info"
 import { PageResponse } from "../../types/generated/cosmos/base/query/v1beta1/pagination"
 
 export interface AllStoredFileResponse {
-    storedGames: StoredFile[]
+    storedFiles: StoredFile[]
     pagination?: PageResponse
 }
 
@@ -63,7 +63,7 @@ export function setupDstorageExtension(base: QueryClient): DstorageExtension {
                     },
                 })
                 return {
-                    storedGames: response.storedFile,
+                    storedFiles: response.storedFile,
                     pagination: response.pagination,
                 }
             }
