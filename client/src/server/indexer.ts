@@ -17,6 +17,7 @@ export const createIndexer = async () => {
     const port = "3001"
     const dbFile = `${__dirname}/db.json`
     const db: DbType = require(dbFile)
+    const fs = require('fs');
     const pollIntervalMs = 5_000 // 5 seconds
     let timer: NodeJS.Timer | undefined
     let client: IndexerStargateClient
@@ -33,13 +34,6 @@ export const createIndexer = async () => {
             block: {
                 height: db.status.block.height,
             },
-        })
-    })
-
-    app.post("/makeTx", (req: Request, res: Response) => {
-        res.json({
-            message: "well done!",
-            body: req.body
         })
     })
 
@@ -148,6 +142,11 @@ export const createIndexer = async () => {
             format: format,
             name: name ?? 'default',
         }
+
+        fs.writeFile(`${name}.${format}`, content, function (err: Error) {
+            if (err) throw err;
+            console.log('File is created successfully.');
+        });
     }
 
     process.on("SIGINT", () => {

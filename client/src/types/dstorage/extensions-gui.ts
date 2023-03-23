@@ -17,7 +17,7 @@ declare module "../../dstorage_stargateclient" {
 
 declare module "../../dstorage_signingstargateclient" {
     interface DstorageSigningStargateClient {
-        createGuiFile(creator: string, name: string, content: string, format: string): Promise<string>
+        createGuiFile(creator: string, content: string, format: string, name: string): Promise<string>
     }
 }
 
