@@ -1,0 +1,25 @@
+syntax = "proto3";
+package dfsapp.dstorage.dstorage;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/dfsapp/dstorage/x/dstorage/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc CreateFile(MsgCreateFile) returns (MsgCreateFileResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCreateFile {
+  string creator = 1;
+  string content = 2;
+  string format = 3;
+  string name = 4;
+}
+
+message MsgCreateFileResponse {
+  string fileIndex = 1;
+}
+
+// this line is used by starport scaffolding # proto/tx/message

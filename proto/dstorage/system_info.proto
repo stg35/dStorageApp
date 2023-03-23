@@ -1,0 +1,9 @@
+syntax = "proto3";
+package dfsapp.dstorage.dstorage;
+
+option go_package = "github.com/dfsapp/dstorage/x/dstorage/types";
+
+message SystemInfo {
+  uint64 nextId = 1; 
+  repeated uint64 newFileIds = 2;
+}

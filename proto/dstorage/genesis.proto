@@ -1,0 +1,18 @@
+syntax = "proto3";
+package dfsapp.dstorage.dstorage;
+
+import "gogoproto/gogo.proto";
+import "dstorage/params.proto";
+import "dstorage/system_info.proto";
+import "dstorage/stored_file.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/dfsapp/dstorage/x/dstorage/types";
+
+// GenesisState defines the dstorage module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  SystemInfo systemInfo = 2 [(gogoproto.nullable) = false];
+  repeated StoredFile storedFileList = 3 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package dfsapp.dstorage.dstorage;
+
+option go_package = "github.com/dfsapp/dstorage/x/dstorage/types";
+
+message StoredFile {
+  string index = 1; 
+  string content = 2; 
+  string format = 3; 
+  string name = 4;
+}
+

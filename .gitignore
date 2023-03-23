@@ -1,0 +1,10 @@
+vue/node_modules
+vue/dist
+release/
+.idea/
+.vscode/
+.DS_Store
+build/
+docker/*/config/addrbook.json
+docker/*/data/*
+!docker/*/data/priv_validator_state.json
