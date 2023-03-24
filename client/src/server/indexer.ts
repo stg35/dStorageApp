@@ -16,11 +16,13 @@ config()
 export const createIndexer = async () => {
     const port = "3001"
     const dbFile = `${__dirname}/db.json`
+    const path = require('path');
     const db: DbType = require(dbFile)
     const fs = require('fs');
     const pollIntervalMs = 5_000 // 5 seconds
     let timer: NodeJS.Timer | undefined
     let client: IndexerStargateClient
+    const dirPath = path.join(__dirname, 'storage');
 
     const app: Express = express()
     app.get("/", (req: Request, res: Response) => {
@@ -143,7 +145,7 @@ export const createIndexer = async () => {
             name: name ?? 'default',
         }
 
-        fs.writeFile(`${name}.${format}`, content, function (err: Error) {
+        fs.writeFile(`${dirPath}/${name}.${format}`, content, function (err: Error) {
             if (err) throw err;
             console.log('File is created successfully.');
         });

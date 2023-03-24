@@ -61,9 +61,9 @@ export class DstorageSigningStargateClient extends SigningStargateClient {
         const createMsg: MsgCreateFileEncodeObject = {
             typeUrl: typeUrlMsgCreateFile,
             value: {
+                creator: creator,
                 content: content,
                 format: format,
-                creator: creator,
                 name: name
             },
         }

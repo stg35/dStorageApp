@@ -2,7 +2,7 @@
 import { ChainInfo } from "@keplr-wallet/types"
 import _ from "../../../environment"
 
-export const dstorageChainId = "dstorage"
+export const dstorageChainId = "dstorage-1"
 
 export const getDstorageChainInfo = (): ChainInfo => ({
     chainId: dstorageChainId,

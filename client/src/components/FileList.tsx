@@ -3,6 +3,8 @@ import {} from "../types/dstorage/extensions-gui"
 import QueryString from "query-string"
 import { DstorageStargateClient } from "../dstorage_stargateclient"
 import { IFileInfo } from "../sharedTypes"
+import { ListGroup } from "react-bootstrap"
+import "./FileList.css"
 
 export interface FileListProps {
     rpcUrl: string
@@ -31,10 +33,10 @@ export const FileList = ({rpcUrl}: FileListProps): JSX.Element => {
 
     return(
         <>
-            <span>Список файлов</span>
-            <ul>
-                {files?.map((file) => (<li key={file.index}>{file.name}</li>))}
-            </ul>
+            <div className="title">Список файлов</div>
+            <ListGroup>
+                {files?.map((file) => (<ListGroup.Item key={file.index}>{file.name}</ListGroup.Item>))}
+            </ListGroup>
         </>
     )
 }

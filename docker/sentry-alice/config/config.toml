@@ -209,10 +209,10 @@ laddr = "tcp://0.0.0.0:26656"
 external_address = ""
 
 # Comma separated list of seed nodes to connect to
-seeds = "b234cb93c8efc8131f9ced0c4c78e154f15a6f02@sentry-bob:26656,046dee49f7546134f01086f34933630dfe2f5565@node-carol:26656"
+seeds = "b35b95ba6e893727ff50944e2b9b0aeac9697e55@sentry-bob:26656,61fdf29dd22c13d1f5917e5da5df56dc5d838c28@node-carol:26656"
 
 # Comma separated list of nodes to keep persistent connections to
-persistent_peers = "5cace2827601815d1d4479b8d25f2847a0112a5f@val-alice:26656"
+persistent_peers = "e46a3395403b0be35e6e78cddb207827b4274d0d@val-alice:26656"
 
 # UPNP port forwarding
 upnp = false
@@ -258,7 +258,7 @@ pex = true
 seed_mode = false
 
 # Comma separated list of peer IDs to keep private (will not be gossiped to other peers)
-private_peer_ids = "5cace2827601815d1d4479b8d25f2847a0112a5f"
+private_peer_ids = "e46a3395403b0be35e6e78cddb207827b4274d0d"
 
 # Toggle to disable guard against peers connecting from the same ip.
 allow_duplicate_ip = false

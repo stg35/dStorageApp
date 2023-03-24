@@ -64,7 +64,7 @@ export const BasicForm = (({ rpcUrl }: FormProps): JSX.Element => {
             rpcUrl,
             offlineSigner,
             {
-                gasPrice: GasPrice.fromString("1stake"),
+                gasPrice: GasPrice.fromString("1stake")
             },
         )
         setCreatorClient(creator)
@@ -84,7 +84,7 @@ export const BasicForm = (({ rpcUrl }: FormProps): JSX.Element => {
         });
 
         const { creator, signingClient } = await getSigningStargateClient();
-        const index: string = await signingClient.createGuiFile(creator, message!.content, message!.format, message!.name);
+        const index: string = await signingClient.createGuiFile(creator, message!.name, message!.content, message!.format);
         console.log(`New file with index ${index} created`);
     }
 
@@ -92,39 +92,39 @@ export const BasicForm = (({ rpcUrl }: FormProps): JSX.Element => {
 
     return(
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3">
-                <Form.Label htmlFor="fileName">Название файла</Form.Label>
-                <Form.Control
-                    id="fileName"
-                    name="fileName"
-                    type="text"
-                    placeholder="Введите название файла"
-                    onChange={event => setFileName(event.target.value)}
-                    value={fileName}
-                />
-            </Form.Group>
-            <Form.Group className="mb-3">
-                <Form.Label>Содержимое файла</Form.Label>
-                <Form.Control 
-                    as="textarea" 
-                    rows={3}
-                    onChange={event => setFileContent(event.target.value)}
-                    value={fileContent}
-                />
-            </Form.Group>
-            <Form.Group className="mb-3">
-                <Form.Select 
-                    aria-label="File format select"
-                    onChange={event => setFileFormat(event.target.value)}
-                >
-                    <option>Выберите формат</option>
-                    <option value="txt">txt</option>
-                </Form.Select>
-            </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label htmlFor="fileName">Название файла</Form.Label>
+                    <Form.Control
+                        id="fileName"
+                        name="fileName"
+                        type="text"
+                        placeholder="Введите название файла"
+                        onChange={event => setFileName(event.target.value)}
+                        value={fileName}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Содержимое файла</Form.Label>
+                    <Form.Control 
+                        as="textarea" 
+                        rows={3}
+                        onChange={event => setFileContent(event.target.value)}
+                        value={fileContent}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Select 
+                        aria-label="File format select"
+                        onChange={event => setFileFormat(event.target.value)}
+                    >
+                        <option>Выберите формат</option>
+                        <option value="txt">txt</option>
+                    </Form.Select>
+                </Form.Group>
 
-            <Button variant="primary" type="submit">
-                submit
-            </Button>
+                <Button variant="primary" type="submit">
+                    Отправить
+                </Button>
         </Form>
     )
 });
